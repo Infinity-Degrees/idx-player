@@ -3,7 +3,9 @@ name: CD
 concurrency: production
 
 on:
-  # Allows you to run this workflow manually from the Actions tab
+  push:
+    branches:
+      - master
   workflow_dispatch:
     inputs:
       version:
@@ -11,20 +13,20 @@ on:
         required: true
         description: Version
         options:
-        - conventional
-        - patch
-        - minor
-        - major
-        - prerelease
-        - from-package
-        - from-git
+          - conventional
+          - patch
+          - minor
+          - major
+          - prerelease
+          - from-package
+          - from-git
       prerelease:
         type: choice
         description: Pre-release
         options:
-        -
-        - canary
-        - beta
+          - ''
+          - canary
+          - beta
       dryrun:
         description: 'Dry-run'
         type: boolean
