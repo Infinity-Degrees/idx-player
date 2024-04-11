@@ -55,7 +55,7 @@ export default class YouTube extends Component {
           controls: controls ? 1 : 0,
           start: parseStartTime(url),
           end: parseEndTime(url),
-          origin: "https://ride.idx.style",
+          origin: 'https://ride.idx.style',
           playsinline: playsinline ? 1 : 0,
           ...this.parsePlaylist(url),
           ...playerVars
